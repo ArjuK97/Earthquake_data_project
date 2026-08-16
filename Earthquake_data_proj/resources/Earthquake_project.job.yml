@@ -1,0 +1,31 @@
+resources:
+  jobs:
+    Earthquake_data_job:
+      name: Earthquake_data_job
+      tasks:
+        - task_key: Ingestion_to_Broze
+          notebook_task:
+            notebook_path: ../src/Notebooks/Ingestion_to_broze.ipynb
+            base_parameters:
+              catalog_name: ${var.catalog}
+            source: WORKSPACE
+        - task_key: Bronze_to_silver
+          depends_on:
+            - task_key: Ingestion_to_Broze
+          pipeline_task:
+            pipeline_id: ${resources.pipelines.Earthquake_data_proj_etl.id}
+        - task_key: Earthquake_Dashboard
+          depends_on:
+            - task_key: Bronze_to_silver
+          dashboard_task:
+            subscription:
+              subscribers:
+                - user_name: arzu.kundu@gmail.com
+            warehouse_id: 8399a73291bfd3c7
+            dashboard_id: ${resources.dashboards.earthquake_monitor.id}
+      queue:
+        enabled: true
+      parameters:
+        - name: catalog_name
+          default: ${var.catalog}
+      performance_target: PERFORMANCE_OPTIMIZED
