@@ -1,0 +1,19 @@
+# The main pipeline for Earthquake_data_proj
+
+resources:
+  pipelines:
+    Earthquake_data_proj_etl:
+      name: bronze_to_silver
+      catalog: ${var.catalog}
+      target: silver
+      channel: CURRENT
+      photon: true
+      serverless: true
+      continuous: false
+      development: false
+      configuration:
+        catalog_name: ${var.catalog}
+      libraries:
+        - glob:
+            include: ../src/DLT_Pipeline/bronze_to_silver/transformations/**
+
