@@ -11,6 +11,7 @@ resources:
       serverless: true
       continuous: false
       development: false
+      allow_duplicate_names: true
       configuration:
         catalog_name: ${var.catalog}
       libraries:
