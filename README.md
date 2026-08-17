@@ -232,6 +232,9 @@ src/
 
 The dashboard provides a way to consume the processed earthquake data for analytical and visualization purposes.
 
+<img width="3840" height="2840" alt="image" src="https://github.com/user-attachments/assets/9bfa688f-9b21-4e5d-9629-32a216888613" />
+
+
 ---
 
 ## 🎯 Project Objectives
