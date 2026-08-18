@@ -1,13 +1,10 @@
 # Earthquake_data_project
 
-I checked the repository rather than inventing the architecture. Your repo already contains **Databricks Asset Bundles, an ingestion notebook, DLT transformations, Bronze→Silver cleaning, ETL transformations, tests, and a dashboard**. 
 
 <img width="2408" height="1371" alt="image" src="https://github.com/user-attachments/assets/340e0bae-6349-4796-a30d-1a7994e451e3" />
 
 
-One important issue: **your current root README is essentially empty**, so this is a major opportunity to make the project look much more professional to recruiters. 
 
-Use this as your `README.md`:
 
 # 🌍 Earthquake Data Engineering Project
 
